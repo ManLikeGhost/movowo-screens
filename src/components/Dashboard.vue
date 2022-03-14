@@ -40,7 +40,16 @@
 						</div>
             <div>
               <p>All accounts</p>
-
+							<div class="rounded p-4 border">
+								<div class="flex justify-between mb-8">
+									<span>Main</span>
+									<span>icon</span>
+								</div>
+								<div>
+									<h2>#0.00</h2>
+									<span>view account details</span>
+								</div>
+							</div>
             </div>
 					</div>
 					<div>
