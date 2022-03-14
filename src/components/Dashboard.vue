@@ -1,4 +1,26 @@
 <template>
+	<div
+		class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
+		v-if="toggleModal"
+	>
+		<div class="relative mx-auto w-auto max-w-2xl">
+			<div class="bg-white rounded px-6 py-6">
+				<div class="flex justify-between mb-4">
+					<div><h1>Add Account</h1></div>
+					<div><span @click="toggleModal = !toggleModal">X</span></div>
+				</div>
+				<div class="rounded bg-slate-50">
+					<span class="text-gray-700 px-2">select a currency account for your business</span>
+				</div>
+				<div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		v-if="toggleModal"
+		class="absolute z-40 inset-0 opacity-25 bg-slate-500"
+	></div>
 	<div class="grid grid-cols-12">
 		<div class="col-span-2 bg-gray-200 h-screen">
 			<div class="mt-4">
@@ -12,16 +34,16 @@
 					</div>
 					<div class="text-2xl mt-8">+</div>
 				</div>
-        <div class="flex flex-col ml-3 mb-52">
-          <span>Accounts</span>
-          <span>Transactions</span>
-          <span>Cards</span>
-          <span>Settings</span>
-        </div>
-        <div class="flex flex-col ml-3">
-          <span>Help & support</span>
-          <spanp>Logout</spanp>
-        </div>
+				<div class="flex flex-col gap-4 content-between ml-3 mb-40">
+					<span>Accounts</span>
+					<span>Transactions</span>
+					<span>Cards</span>
+					<span>Settings</span>
+				</div>
+				<div class="flex flex-col gap-2 content-between ml-3">
+					<span>Help & support</span>
+					<spanp>Logout</spanp>
+				</div>
 			</div>
 		</div>
 		<div class="col-span-10">
@@ -33,24 +55,35 @@
 							<p>Accounts Overview</p>
 						</div>
 						<div class="flex mb-14">
-							<button class="bg-gray-200 rounded-md p-2">Send Funds</button>
-							<button class="bg-gray-200 rounded-md p-2 mx-2">Add Funds</button>
-							<button class="bg-gray-200 rounded-md p-2 mr-2">Exchange</button>
-							<button class="bg-gray-200 rounded-md p-2">Add Account</button>
+							<button class="bg-gray-200 rounded-md p-2 hover:bg-gray-400">
+								Send Funds
+							</button>
+							<button class="bg-gray-200 rounded-md p-2 mx-2 hover:bg-gray-400">
+								Add Funds
+							</button>
+							<button class="bg-gray-200 rounded-md p-2 mr-2 hover:bg-gray-400">
+								Exchange
+							</button>
+							<button
+								class="bg-gray-200 rounded-md p-2 hover:bg-gray-400"
+								@click="toggleModal = !toggleModal"
+							>
+								Add Account
+							</button>
 						</div>
-            <div>
-              <p>All accounts</p>
+						<div>
+							<p class="mb-2">All accounts</p>
 							<div class="rounded p-4 border">
 								<div class="flex justify-between mb-8">
 									<span>Main</span>
 									<span>icon</span>
 								</div>
 								<div>
-									<h2>#0.00</h2>
-									<span>view account details</span>
+									<h1 class="text-xl">#0.00</h1>
+									<span class="text-blue-600">view account details</span>
 								</div>
 							</div>
-            </div>
+						</div>
 					</div>
 					<div>
 						<span>icon</span>
@@ -64,6 +97,11 @@
 <script>
 	export default {
 		name: 'Dashboard',
+		data() {
+			return {
+				toggleModal: false,
+			};
+		},
 	};
 </script>
 
