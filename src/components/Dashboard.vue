@@ -1,119 +1,7 @@
 <template>
 	<Modal :toggleModal="toggleModal" @close="toggleModal = false">
 		<template v-slot:title> Add account </template>
-		<div class="shadow-lg rounded-lg bg-white p-5">
-			<span>Select a currency account for your business</span>
-			<div class="flex flex-col px-4 py-4">
-				<!-- first-item -->
-				<div class="grid grid-cols-12 py-4">
-					<div class="col-span-11">
-						<div class="flex">
-							<img
-								src="../assets/currency-flag.png"
-								alt="currency-flag"
-								class="rounded-full"
-								width="26"
-								height="26"
-							/>
-							<span class="mx-4">British Account</span>
-						</div>
-					</div>
-					<div class="col-span-1">
-						<i class="fa-solid fa-plus"></i>
-					</div>
-				</div>
-				<!-- first-item -->
-
-				<!-- second-item -->
-				<div class="grid grid-cols-12 py-4">
-					<div class="col-span-11">
-						<div class="flex">
-							<img
-								src="../assets/currency-flag.png"
-								alt="currency-flag"
-								class="rounded-full"
-								width="26"
-								height="26"
-							/>
-							<span class="mx-4">British Account</span>
-						</div>
-					</div>
-					<div class="col-span-1">
-						<i class="fa-solid fa-plus"></i>
-					</div>
-				</div>
-				<!-- second-item -->
-
-				<!-- third-item -->
-				<div class="grid grid-cols-12 py-4">
-					<div class="col-span-11">
-						<div class="flex">
-							<img
-								src="../assets/currency-flag.png"
-								alt="currency-flag"
-								class="rounded-full"
-								width="26"
-								height="26"
-							/>
-							<span class="mx-4">British Account</span>
-						</div>
-					</div>
-					<div class="col-span-1">
-						<i class="fa-solid fa-plus"></i>
-					</div>
-				</div>
-				<!-- third-item -->
-
-				<!-- fourth-item -->
-				<div class="grid grid-cols-12 py-4">
-					<div class="col-span-11">
-						<div class="flex">
-							<img
-								src="../assets/currency-flag.png"
-								alt="currency-flag"
-								class="rounded-full"
-								width="26"
-								height="26"
-							/>
-							<span class="mx-4">British Account</span>
-						</div>
-					</div>
-					<div class="col-span-1">
-						<i class="fa-solid fa-plus"></i>
-					</div>
-				</div>
-				<!-- fourth-item -->
-
-				<!-- fifth-item -->
-				<div class="grid grid-cols-12 py-4">
-					<div class="col-span-11">
-						<div class="flex">
-							<img
-								src="../assets/currency-flag.png"
-								alt="currency-flag"
-								class="rounded-full"
-								width="26"
-								height="26"
-							/>
-							<span class="mx-4">British Account</span>
-						</div>
-					</div>
-					<div class="col-span-1">
-						<i class="fa-solid fa-plus"></i>
-					</div>
-				</div>
-				<!-- fifth-item -->
-				<div class="border-dashed border-t-2 my-4">
-				</div>
-				<div class="flex">
-					<input class="bg-gray-200 p-4 outline-none rounded-md" placeholder="Name account (optional)"/>
-					<div class="flex justify-end ">
-						<button class="bg-blue-600 rounded-md mx-4 text-white px-3">Add account</button>
-					</div>
-				</div>
-				
-			</div>
-		</div>
+		<AddAccount/>
 	</Modal>
 	<div class="grid grid-cols-12">
 		<div class="col-span-2 bg-gray-200 h-screen">
@@ -197,40 +85,17 @@
 				</div>
 			</div>
 		</div>
-		<!-- copied-stuff -->
-		<!-- <div
-		class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
-		v-if="toggleModal"
-	>
-		<div class="relative mx-auto w-auto max-w-2xl">
-			<div class="bg-white rounded px-6 py-6">
-				<div class="flex justify-between mb-4">
-					<div><h1>Add Account</h1></div>
-					<div><span @click="toggleModal = !toggleModal">X</span></div>
-				</div>
-				<div class="rounded bg-slate-50">
-					<span class="text-gray-700 px-2"
-						>select a currency account for your business</span
-					>
-				</div>
-				<div></div>
-			</div>
-		</div>
-	</div>
-	<div
-		v-if="toggleModal"
-		class="absolute z-40 inset-0 opacity-25 bg-slate-500"
-	></div> -->
-		<!-- copied-stuff -->
 	</div>
 </template>
 
 <script>
 	import Modal from './utilities/Modal.vue';
+	import AddAccount from './layout/AddAccount.vue'
 	export default {
 		name: 'Dashboard',
 		components: {
 			Modal,
+			AddAccount
 		},
 		data() {
 			return {
